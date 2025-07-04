@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request a Callback | Your Electrical Services</title>
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --primary-dark: #0b5ed7;
+      --bg: #f6f8fa;
+      --text: #222;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      margin: 0 0 0.5rem;
+    }
+
+    p {
+      margin: 0.5rem 0 1.5rem;
+    }
+
+    form {
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 0.75rem 0 0.25rem;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 1rem;
+      width: 100%;
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease-in-out;
+    }
+
+    button:hover {
+      background: var(--primary-dark);
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 1rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Electrical Contracting</h1>
+      <p>Complete this quick form and we'll call you back when it suits you.</p>
+    </header>
+
+    <!-- Replace the action attribute with your backend, Google Form or Zapier webhook URL -->
+    <form action="https://example.com/submit" method="POST">
+      <label for="name">Name<span aria-hidden="true">*</span></label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="address">Address / Job Location<span aria-hidden="true">*</span></label>
+      <textarea
+        id="address"
+        name="address"
+        rows="2"
+        required
+      ></textarea>
+
+      <label for="description">Brief Job Description<span aria-hidden="true">*</span></label>
+      <textarea
+        id="description"
+        name="description"
+        rows="3"
+        required
+        placeholder="e.g. Rewire kitchen, install outdoor socket…"
+      ></textarea>
+
+      <label for="callback">Preferred call‑back window<span aria-hidden="true">*</span></label>
+      <select id="callback" name="callback" required>
+        <option value="" disabled selected>Choose a window</option>
+        <option>ASAP (next 30 min)</option>
+        <option>12 – 14 h</option>
+        <option>14 – 16 h</option>
+        <option>16 – 18 h</option>
+        <option>Tomorrow morning</option>
+      </select>
+
+      <button type="submit">Send Request</button>
+    </form>
+
+    <p class="note">We respect your time — our initial call is under 5 minutes.</p>
+  </div>
+</body>
+</html>
